@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+@import 'variables';
+
+//----------
+// Base
+//----------
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, p, input {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $roboto-condensed, sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $roboto, sans-serif;
+    font-size: .85em;
+
+    @media(min-width: $tablet) {
+        font-size: .9em;
+    }
+
+    @media(min-width: $small-desktop) {
+        font-size: 1em;
+    }
+}
+
+//----------
+// Radio Styles
+//----------
+/*
+    ----------
+    Code example
+    ----------
+    <div class="v-input-checkbox">
+        <input id="checkbox-1" name="checkbox" type="checkbox" />
+        <label for="checkbox-1">Input Checkbox 1</label>
+    </div>
+    <div class="v-input-checkbox">
+        <input id="checkbox-2" name="checkbox" type="checkbox" />
+        <label for="checkbox-2">Input Checkbox 2</label>
+    </div>
+ */
+.v-input-checkbox {
+    input {
+        position: absolute;
+        left: -9999px;
+
+        appearance: none;
+
+        &:checked + label {
+            &:before {
+                border-color: $blue;
+                background-color: $blue-light;
+            }
+            &:after {
+                transform: scale(1);
+            }
+        }
+    }
+
+    & > label {
+        font-size: 15px;
+        position: relative;
+        display: inline-block;
+        padding-left: 24px;
+        cursor: pointer;
+        user-select: none;
+        transition: color .1s;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            content: '';
+            border: 1px solid $gray;
+            border-radius: 2px;
+            background-color: $white;
+        }
+
+        &:after {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 13px;
+            height: 13px;
+            content: '';
+            transition: all .1s ease;
+            transform: scale(0);
+            background-image: url('~Src/assets/check.svg');
+            background-repeat: no-repeat;
+        }
+
+        &:hover:before {
+            border-color: $gray-dark;
+        }
+    }
+
+    &.v-input-loading {
+        cursor: auto;
+        user-select: none;
+
+        &:before {
+            top: 50%;
+            right: auto;
+            left: 10px;
+        }
+
+        & > label {
+            cursor: auto;
+            color: $gray-dark;
+
+            &:before, &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+//----------
+// ul styles
+//----------
+ul {
+    margin: 0;
+    padding-left: 1em;
+    line-height: 1.75em;
+
+    li {
+        vertical-align: middle;
+    }
+}

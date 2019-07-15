@@ -1,0 +1,256 @@
+[
+  {
+    "sku": "XX45",
+    "name": "Rogue Gymnastic Wood Rings",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rogue-wood-rings-th-resize_1_.jpg",
+    "url": "https://www.roguefitness.com/rogue-dumbbells",
+    "price": 7,
+    "rating": 4.9,
+    "startingAt": true,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "XX7337",
+    "name": "The Ohio Bar",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/o/h/ohio-bar-th_1__2.png",
+    "url": "https://www.roguefitness.com/the-ohio-bar",
+    "price": 282,
+    "rating": 4.9,
+    "startingAt": false,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "XX7167",
+    "name": "Rogue Kettlebells",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rogue-kettlebell-th.jpg",
+    "url": "https://www.roguefitness.com/rogue-kettlebells",
+    "price": 22.07,
+    "rating": 4.9,
+    "startingAt": true,
+    "specialPrice": false,
+    "promotions": []
+  },
+  {
+    "sku": "XX7125",
+    "name": "Rogue Dumbbells",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rouge-dumbbells-th_1_1.jpg",
+    "url": "https://www.roguefitness.com/rogue-dumbbells",
+    "price": 7,
+    "rating": 4.9,
+    "startingAt": true,
+    "specialPrice": false,
+    "promotions": [
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "HG22908",
+    "name": "Rogue HG 2.0 Bumper Plates",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rogue-hg-2.0-th2new-resize_1__1.jpg",
+    "url": "https://www.roguefitness.com/rogue-hg-2-0-bumper-plates",
+    "price": 126,
+    "rating": 4.8,
+    "startingAt": true,
+    "specialPrice": false,
+    "promotions": []
+  },
+  {
+    "sku": "PS0000",
+    "name": "Rogue Wrist Wraps",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rogue-wrist-wraps-red-black-web-th1_4.jpg",
+    "url": "https://www.roguefitness.com/rogue-wrist-wraps-red-black",
+    "price": 12,
+    "rating": 4.8,
+    "startingAt": false,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "AD0099",
+    "name": "Rogue PRO Jump Rope",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rogue-pro-weighted-jump-rope-th_1_2.jpg",
+    "url": "https://www.roguefitness.com/rogue-pro-jump-rope",
+    "price": 282,
+    "rating": 4.9,
+    "startingAt": false,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "CN1044",
+    "name": "Reebok CrossFit Nano 8.0 FLEXWEAVE - Women's",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/c/n/cn1044_th.jpg",
+    "url": "https://www.roguefitness.com/reebok-crossfit-nano-8-0-womens-excellent-red-team-dark-royal-white",
+    "price": 130,
+    "rating": false,
+    "startingAt": false,
+    "specialPrice": false,
+    "promotions": [
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "HW0549",
+    "name": "Rogue Basic Shirt",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/o/rogue_thumb_hbm-th-new.png",
+    "url": "https://www.roguefitness.com/basic-shirt-men-s-black-maroon",
+    "price": 25,
+    "rating": 4.4,
+    "startingAt": false,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "XX10965-COLORED",
+    "name": "Rogue RML-490C Power Rack",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/r/m/rml-490c-quick_1.jpg",
+    "url": "https://www.roguefitness.com/rogue-rml-490-power-rack-color",
+    "price": 1075,
+    "rating": 4.8,
+    "startingAt": false,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free"
+    ]
+  },
+  {
+    "sku": "SCH0004",
+    "name": "Schwinn Airdyne Pro",
+    "brand": "Schwinn",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/193x/9df78eab33525d08d6e5fb8d27136e95/s/c/schwinn-airdyne-ad-pro-th1.jpg",
+    "url": "https://www.roguefitness.com/schwinn-airdyne-pro",
+    "price": 1299,
+    "rating": false,
+    "startingAt": false,
+    "specialPrice": 999,
+    "promotions": [
+      "Made In USA",
+      "Free Shipping",
+      "Hot Deal"
+    ]
+  },
+  {
+    "sku": "IP0523",
+    "name": "Rogue Dumbbell Bumpers - CrossFit Branded",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/193x/9df78eab33525d08d6e5fb8d27136e95/h/u/hundo_pricing_thumb.jpg",
+    "url": "https://www.roguefitness.com/rogue-crossfit-dumbbell-bumpers-crossfit-branded",
+    "price": 185,
+    "rating": 4.7,
+    "startingAt": false,
+    "specialPrice": 115,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free",
+      "Hundo Pricing",
+      "Hot Deal"
+    ]
+  },
+  {
+    "sku": "38469",
+    "name": "Rehband Rx Wrist Support - Pair",
+    "brand": "Rehband",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/193x/9df78eab33525d08d6e5fb8d27136e95/r/e/rehband-101306-01-black-th.jpg",
+    "url": "https://www.roguefitness.com/rehband-rx-wrist-support-black",
+    "price": 19.99,
+    "rating": 4.5,
+    "startingAt": false,
+    "specialPrice": 17.99,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free",
+      "Hot Deal"
+    ]
+  },
+  {
+    "sku": "JG0072",
+    "name": "Rehband Rx 5mm Knee Sleeve",
+    "brand": "Rehband",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/193x/9df78eab33525d08d6e5fb8d27136e95/j/g/jg0072-105306-03_rehband_rx_line_knee_support_5mm_th_1.jpg",
+    "url": "https://www.roguefitness.com/rehband-rx-knee-sleeve-5mm-black",
+    "price": 39.99,
+    "rating": 4.7,
+    "startingAt": false,
+    "specialPrice": 37.99,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free",
+      "Hot Deal"
+    ]
+  },
+  {
+    "sku": "852930004",
+    "name": "Nike Metcon DSX Flyknit - Men's",
+    "brand": "Nike",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/193x/9df78eab33525d08d6e5fb8d27136e95/8/5/852930-004-th_1.jpg",
+    "url": "https://www.roguefitness.com/nike-metcon-3-flyknit-mens-black-black-metallic-silver",
+    "price": 159.99,
+    "rating": 4.4,
+    "startingAt": false,
+    "specialPrice": 119.99,
+    "promotions": [
+      "3 Ships Free",
+      "Hot Deal"
+    ]
+  },
+  {
+    "sku": "BONEYARD285",
+    "name": "Rogue 28.5mm Boneyard Bars",
+    "brand": "Rogue",
+    "placeholder": "https://via.placeholder.com/200x200",
+    "image": "https://www.roguefitness.com/media/catalog/product/cache/1/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/o/h/ohio-boneyard-bar-th.jpg",
+    "url": "https://www.roguefitness.com/rogue-28-5-mm-boneyard-bars",
+    "price": 275,
+    "rating": false,
+    "startingAt": true,
+    "specialPrice": false,
+    "promotions": [
+      "Made In USA",
+      "3 Ships Free",
+      "Hot Deal"
+    ]
+  }
+]
