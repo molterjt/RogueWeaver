@@ -26,7 +26,7 @@ Vue.component('rogue-header', () => import('./js/components/header.vue'))
 Vue.component('filters', () => import('./js/components/filters.vue'))
 Vue.component('product', () => import('./js/components/product.vue'))
 Vue.component('productList', () => import('./js/components/productList.vue'))
-Vue.component('sampleProduct', () => import('./js/components/sampleProduct.vue'))
+
 
 //Router
 const routes = [

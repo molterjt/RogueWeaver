@@ -13,28 +13,37 @@
             @change="updateCheckedFilter"
           )
           label(:for='filter + "-filter"') {{ filter }}
+          
+    
 </template>
 
 <script>
 export default {
   props: {
     filterKey: String,
-  
   },
    data: () => ({
      filterKey: undefined,
    }),
-
-   
   methods:{
     updateCheckedFilter(e) {
       this.$store.commit('updateCheckedFilters', e.target.value);
+      this.$store.commit('filtering', e.target.value);
+    },
+    resetFilter(e){
+      this.$store.commit('resetFilterGroup', e.target.value)
     }
+     
   },
   computed: {
-    
-
-
+    isChecked(e){
+       if(this.$store.state.checkedFilters.brand.includes(e.target.value) || this.$store.state.checkedFilters.promotions.includes(e.target.value)){
+         return true
+       }
+        else{
+          return false
+        }
+    },
     /**
      * Filter through provided products
      * to produce product filters based on provided filterKey

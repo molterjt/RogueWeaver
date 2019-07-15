@@ -12,8 +12,8 @@
         <p>{{getCheckedFilters}}</p>
       </div>
       <div class="rightContainer">
-        <productList :productData="getProductData" />
-      </div> 
+        <productList :productData="getMyData" />
+      </div>
   </div>
 </template>
 
@@ -24,12 +24,13 @@ export default {
   data: () => ({
     productData: [],
   }),
+  methods: {
+
+  },
   computed: {
-    getName () {
-      return this.$store.state.myName
-    },
+   
     getProductData(){
-      return this.$store.state.productsData
+      return this.$store.getters.getRogueProducts;
     },
     getBrands(){
       return this.$store.state.brandFilters
@@ -39,13 +40,26 @@ export default {
         return this.$store.state.checkedFilters
     },
     getMyData(){
-      if(this.$store.state.checkedFilters.promotions.length > 0){
-        return this.$store.getters.filteredProducts
-      } else{
-        return getProductData()
+      if(this.getFilters.length > 0){
+        return this.filterAll;
+      }else{
+        return this.getProductData;
       }
-      
-      
+    },
+    getFilters(){
+      return this.$store.state.checkedFilters;
+    },
+    filterAll(){
+      let filters = [...this.getFilters];
+      let data = this.getProductData;
+      let filteredData = [];
+      filters.map( filter => {
+         filteredData = data.filter( 
+           product => product.brand === filter || product.promotions.includes(filter)
+           )
+      });
+      data = [...filteredData];
+      return data;
     }
   },
 }

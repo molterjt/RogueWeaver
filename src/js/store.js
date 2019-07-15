@@ -24,11 +24,75 @@ export default {
     },
   },
 
+  getters: {
+    filterMe: (state) => {
+      let filters = [...state.checkedFilters]
+      let productList = [...state.productsData]
+    
+      filters.map( promo => (
+        productList = productList.filter( product => {
+          product.promotions.includes(promo) 
+        })
+      ))
+      state.productsData = productList
+      
+      return state.productsData
+    },
+  
+    getProductsByFilter: (state) => (filter) => {
+      return state.productsData.filter(item => item.brand === filter)
+    },
+
+    getRogueProducts: (state) => {
+      return state.productsData
+    },
+  },
+
 
   mutations: {
 
+
+    filterProducts: (state) => {
+      let brandFilters = [...state.checkedFilters.brand]
+      let promoFilters = [...state.checkedFilters.promotions]
+      let productList = [...state.productsData]
+      brandFilters.map( brand => (
+        productList = productList.filter(product => product.brand === brand )
+      ))
+      promoFilters.map( promo => (
+        productList = productList.filter( product => product.promotions.includes(promo))
+      ))
+      
+      return state.productsData = [...productList]
+    },
+
+   
+
+    filtering: (state, filter) =>{
+      let filtered = [...state.productsData]
+      filtered.filter( product => {
+        product.brand === filter || product.promotions.includes(filter)
+      })
+      
+      return state.productsData = [...filtered]
+
+
+    },
+
     updateCheckedFilters: (state, filter) => {
-      state.checkedFilters = [...state.checkedFilters, filter]
+      let filters = [...state.checkedFilters]
+      filters.push(filter)
+      state.checkedFilters = [...filters]
+    },
+
+
+    productFilter(state,filter){
+      if(!filter) {
+        return state.productsData
+      } else {
+        return state.productsData.filter(product => product.brand === filter)
+      }
+     
     },
 
     SET_PRODUCTS (state, products){
