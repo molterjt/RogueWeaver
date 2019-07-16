@@ -1,7 +1,8 @@
 <template>
   <div class="productContainer" >
     <ol class="productItem" v-for="(x, i) in productData" :key="i">
-      <product 
+     
+      <product productData
         :name="x.name"
         :brand="x.brand"
         :placeholder="x.placeholder"
@@ -12,7 +13,7 @@
         :startingAt="x.startingAt"
         :specialPrice="x.specialPrice"
         :promotions="x.promotions"
-      />
+      /> 
     </ol>
   </div>
 </template>

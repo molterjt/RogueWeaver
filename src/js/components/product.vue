@@ -6,7 +6,7 @@
       img.product-image(v-else :src='placeholder')
     p.product-name {{ name }}
     .product-stars(v-if='rating')
-        .star(v-for='n in starRating')
+        .star(v-for='n in floorRating(rating)')
           span.star-yellow ★
         .star.star-percentage(v-show='remainingDecimal(rating)')
           span.star-gray ★
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  
+ 
   props: {
     sku: {type:String, default: "000"},
     name: {type: String, default: ""},
@@ -33,7 +33,7 @@ export default {
     image: {type:String, default:""},
     url: {type:String, default:""},
     price: {type: Number, default: 0},
-    ratgin: {type: Number, default: 0},
+    rating: {type: Number, default: undefined},
     startingAt: {type: Number, default: 0},
     specialPrice: {type: Number, default: 0},
     promotions: {type: Array, default: []},
@@ -44,7 +44,7 @@ export default {
         // name: '',
         // brand: '',
         // url: '',
-        // rating: 0.0,
+        //rating: 0.0,
         // price: 0,
         // starRating: 0.0,
         // startingAt: undefined,
@@ -159,9 +159,10 @@ export default {
   &-stars {
     font-size: .9em;
     display: inline-block;
-    width: 80px;
+    width: 100%;
     margin: 0 auto .45em;
     vertical-align: middle;
+    
 
     .star {
       display: inline-block;

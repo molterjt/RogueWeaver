@@ -1,52 +1,51 @@
 <template>
   <div class="topLevelContainer">
       <div class="leftContainer">
-
         <div class="filterOptions">
-          <filters filterKey="brand"  />
+          <filters filterKey="brand"/>
         </div>
         <div class="filterOptions">
-         <filters filterKey="promotions"   />
-          
+         <filters filterKey="promotions"/>
         </div>
-        <p>{{getCheckedFilters}}</p>
       </div>
       <div class="rightContainer">
-        <productList :productData="getProductData" />
-      </div> 
+        <productList :productData="getFilteredProducts" />
+      </div>
   </div>
 </template>
 
 <script>
-import { react } from 'babel-types';
-
 export default {
   data: () => ({
     productData: [],
   }),
+  methods: {},
   computed: {
-    getName () {
-      return this.$store.state.myName
+    /**
+     * Return state.checkedFilters
+     * @return {array}
+     */
+    getFilters(){
+      return this.$store.state.checkedFilters;
     },
+    /**
+     * Return state.productData
+     * @return {array}
+     */
     getProductData(){
-      return this.$store.state.productsData
+      return this.$store.getters.getRogueProducts;
     },
-    getBrands(){
-      return this.$store.state.brandFilters
-    },
-     getCheckedFilters(){
-       if(this.$store.state.checkedFilters.length > 0)
-        return this.$store.state.checkedFilters
-    },
-    getMyData(){
-      if(this.$store.state.checkedFilters.promotions.length > 0){
-        return this.$store.getters.filteredProducts
-      } else{
-        return getProductData()
+    /**
+     * Return filtered product data if filters selected
+     * @return {array}
+     */
+    getFilteredProducts(){
+      if(this.getFilters.length > 0){
+        return this.$store.getters.productFilter
+      }else{
+        return this.getProductData;
       }
-      
-      
-    }
+    },
   },
 }
 </script>
@@ -91,9 +90,7 @@ export default {
         height: auto;
         overflow: hidden;
     }
-
   }
-
   .filterOptions{
     justify-content: center;
     margin-left: 10px;

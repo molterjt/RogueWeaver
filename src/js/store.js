@@ -1,40 +1,62 @@
-import Axios from 'axios'
-
 
 const RogueData = require('../assets/products.json')
 export default {
   
   state: {
-    productsData: [...RogueData],
-  
-    checkedFilters: {
+    productsData   : [...RogueData],
+    checkedFilters : {
       brand      : [],
       promotions : [],
     },
   },
 
+  actions: {},
 
-  actions: {
-    loadProductData ({commit}){
-      Axios.get('/Users/jeffreymolter/Vue-Projects/front-end-dev-test-2/src/assets/products.json')
-        .then( r => r.data)
-        .then(loadedProducts => {
-          commit('SET_PRODUCTS', loadedProducts)
-        })
+  getters: {
+    /**
+     * Returns filtered products
+     * @param  {object} state
+     * @return {array}
+     */
+    productFilter(state){
+      let filters = [...state.checkedFilters]
+      const data = [...state.productsData]
+      let filteredData = []
+      let newData = []
+      filters.map( filter => {
+        filteredData = data.filter( product => product.brand === filter || product.promotions.includes(filter))
+        newData = newData.concat(filteredData)
+      })
+    
+      return newData
+    },
+    /**
+     * Return state.productsData array
+     * @param  {object} state
+     * @return {array}
+     */
+    getRogueProducts: (state) => {
+      return state.productsData
     },
   },
 
-
   mutations: {
-
+    /**
+     * Handle state.checkedFilters add/remove of filters
+     * @param  {string} filter
+     * @return {array} state.checkedFilters
+     */
     updateCheckedFilters: (state, filter) => {
-      state.checkedFilters = [...state.checkedFilters, filter]
+      let filters = [...state.checkedFilters]
+      if(filters.includes(filter)){
+        const index = filters.indexOf(filter)
+        filters.splice(index,1)
+      } else{
+        filters = filters.concat(filter)
+      }
+  
+      return state.checkedFilters = [...filters]  
     },
-
-    SET_PRODUCTS (state, products){
-      state.productsData = products
-    },
-
 
     /**
      * Set productsData
