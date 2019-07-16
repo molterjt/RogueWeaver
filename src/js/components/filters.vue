@@ -13,8 +13,6 @@
             @change="updateCheckedFilter"
           )
           label(:for='filter + "-filter"') {{ filter }}
-          
-    
 </template>
 
 <script>
@@ -24,9 +22,13 @@ export default {
     return{
       checkedBoxes: []
     }
-
   },
   methods:{
+    /**
+     * Add/Remove selected filter to/from state.checkedFilters
+     * @param (object) event
+     * @return {array}
+     */
     updateCheckedFilter(e) {
       this.$store.commit('updateCheckedFilters', e.target.value);
     },
@@ -35,14 +37,12 @@ export default {
     }
   },
   computed: {
-  
     /**
      * Filter through provided products
      * to produce product filters based on provided filterKey
      * @return {array}
      */
     computedFilters() {
-      //let filters = [...this.filterOptions]
       let filters = []
       this.$store.state.productsData.filter(product => {
 

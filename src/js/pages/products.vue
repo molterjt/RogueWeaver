@@ -1,67 +1,51 @@
 <template>
   <div class="topLevelContainer">
       <div class="leftContainer">
-
         <div class="filterOptions">
-          <filters filterKey="brand"  />
+          <filters filterKey="brand"/>
         </div>
         <div class="filterOptions">
-         <filters filterKey="promotions"   />
+         <filters filterKey="promotions"/>
         </div>
       </div>
       <div class="rightContainer">
-       
         <productList :productData="getFilteredProducts" />
       </div>
   </div>
 </template>
 
 <script>
-import { react } from 'babel-types';
-
 export default {
   data: () => ({
     productData: [],
   }),
   methods: {},
   computed: {
+    /**
+     * Return state.checkedFilters
+     * @return {array}
+     */
+    getFilters(){
+      return this.$store.state.checkedFilters;
+    },
+    /**
+     * Return state.productData
+     * @return {array}
+     */
+    getProductData(){
+      return this.$store.getters.getRogueProducts;
+    },
+    /**
+     * Return filtered product data if filters selected
+     * @return {array}
+     */
     getFilteredProducts(){
       if(this.getFilters.length > 0){
         return this.$store.getters.productFilter
       }else{
         return this.getProductData;
       }
-      
     },
-    getProductData(){
-      return this.$store.getters.getRogueProducts;
-    },
-     getCheckedFilters(){
-       if(this.$store.state.checkedFilters.length > 0)
-        return this.$store.state.checkedFilters
-    },
-    getMyData(){
-      if(this.getFilters.length > 0){
-        return this.filterAll;
-      }else{
-        return this.getProductData;
-      }
-    },
-    getFilters(){
-      return this.$store.state.checkedFilters;
-    },
-    filterAll(){
-      let filters = [...this.getFilters];
-      let data = this.getProductData;
-      let filteredData = [];
-      filters.map( filter => {
-         filteredData = data.filter( 
-           product => product.brand === filter || product.promotions.includes(filter)
-           )
-      });
-      data = [...filteredData];
-      return data;
-    }
   },
 }
 </script>

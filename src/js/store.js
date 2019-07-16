@@ -13,7 +13,11 @@ export default {
   actions: {},
 
   getters: {
-
+    /**
+     * Returns filtered products
+     * @param  {object} state
+     * @return {array}
+     */
     productFilter(state){
       let filters = [...state.checkedFilters]
       const data = [...state.productsData]
@@ -23,66 +27,25 @@ export default {
         filteredData = data.filter( product => product.brand === filter || product.promotions.includes(filter))
         newData = newData.concat(filteredData)
       })
-      
+    
       return newData
     },
-
-  
-    getProductsByFilter: (state) => (filter) => {
-      return state.productsData.filter(item => item.brand === filter)
-    },
-
+    /**
+     * Return state.productsData array
+     * @param  {object} state
+     * @return {array}
+     */
     getRogueProducts: (state) => {
       return state.productsData
     },
-
-    filterProducts: (state) =>{
-      if(state.checkedFilters.length > 1 ){
-        let filters = [...state.checkedFilters]
-        let data = [...state.productsData]
-        let newData = []
-        filters.map( filter => {
-          newData = data.filter(
-            product => product.brand === filter || product.promotions.includes(filter)
-          )
-        })
-        state.productsData = [...newData]
-        
-        return state.productsData
-
-      } else {
-        return state.productsData
-      }
-
-    },
-    
-
   },
 
   mutations: {
-    
-    filterMe: (state, filter) => {
-      let data = state.productsData
-      let newData = []
-      data.filter( product => {
-        newData = product.brand === filter || product.promotions.includes(filter)
-      })
-      
-      return state.productsData = [...newData]
-    },
-   
-
-    filtering: (state, filter) =>{
-      let filtered = [...state.productsData]
-      filtered.filter( product => {
-        product.brand === filter || product.promotions.includes(filter)
-      })
-      
-      return state.productsData = [...filtered]
-
-
-    },
-
+    /**
+     * Handle state.checkedFilters add/remove of filters
+     * @param  {string} filter
+     * @return {array} state.checkedFilters
+     */
     updateCheckedFilters: (state, filter) => {
       let filters = [...state.checkedFilters]
       if(filters.includes(filter)){
@@ -91,9 +54,8 @@ export default {
       } else{
         filters = filters.concat(filter)
       }
-      
-      return state.checkedFilters = [...filters]
-      
+  
+      return state.checkedFilters = [...filters]  
     },
 
     /**
