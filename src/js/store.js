@@ -1,5 +1,3 @@
-import Axios from 'axios'
-
 
 const RogueData = require('../assets/products.json')
 export default {
@@ -12,12 +10,23 @@ export default {
     },
   },
 
-
-  actions: {
-    
-  },
+  actions: {},
 
   getters: {
+
+    productFilter(state){
+      let filters = [...state.checkedFilters]
+      const data = [...state.productsData]
+      let filteredData = []
+      let newData = []
+      filters.map( filter => {
+        filteredData = data.filter( product => product.brand === filter || product.promotions.includes(filter))
+        newData = newData.concat(filteredData)
+      })
+      
+      return newData
+    },
+
   
     getProductsByFilter: (state) => (filter) => {
       return state.productsData.filter(item => item.brand === filter)
@@ -26,6 +35,7 @@ export default {
     getRogueProducts: (state) => {
       return state.productsData
     },
+
     filterProducts: (state) =>{
       if(state.checkedFilters.length > 1 ){
         let filters = [...state.checkedFilters]
@@ -49,7 +59,6 @@ export default {
 
   },
 
-
   mutations: {
     
     filterMe: (state, filter) => {
@@ -61,22 +70,6 @@ export default {
       
       return state.productsData = [...newData]
     },
-
-
-    filterProducts: (state) => {
-      let brandFilters = [...state.checkedFilters.brand]
-      let promoFilters = [...state.checkedFilters.promotions]
-      let productList = [...state.productsData]
-      brandFilters.map( brand => (
-        productList = productList.filter(product => product.brand === brand )
-      ))
-      promoFilters.map( promo => (
-        productList = productList.filter( product => product.promotions.includes(promo))
-      ))
-      
-      return state.productsData = [...productList]
-    },
-
    
 
     filtering: (state, filter) =>{
@@ -95,7 +88,6 @@ export default {
       if(filters.includes(filter)){
         const index = filters.indexOf(filter)
         filters.splice(index,1)
-
       } else{
         filters = filters.concat(filter)
       }
@@ -103,21 +95,6 @@ export default {
       return state.checkedFilters = [...filters]
       
     },
-
-
-    productFilter(state,filter){
-      if(!filter) {
-        return state.productsData
-      } else {
-        return state.productsData.filter(product => product.brand === filter)
-      }
-     
-    },
-
-    SET_PRODUCTS (state, products){
-      state.productsData = products
-    },
-
 
     /**
      * Set productsData

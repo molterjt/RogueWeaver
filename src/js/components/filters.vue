@@ -29,23 +29,13 @@ export default {
   methods:{
     updateCheckedFilter(e) {
       this.$store.commit('updateCheckedFilters', e.target.value);
-     
-  
     },
     resetFilter(e){
       this.$store.commit('resetFilterGroup', e.target.value)
     }
-     
   },
   computed: {
-    isChecked(e){
-       if(this.$store.state.checkedFilters.brand.includes(e.target.value) || this.$store.state.checkedFilters.promotions.includes(e.target.value)){
-         return true
-       }
-        else{
-          return false
-        }
-    },
+  
     /**
      * Filter through provided products
      * to produce product filters based on provided filterKey
@@ -54,7 +44,6 @@ export default {
     computedFilters() {
       //let filters = [...this.filterOptions]
       let filters = []
-
       this.$store.state.productsData.filter(product => {
 
         if(typeof product[this.filterKey] === 'object') {

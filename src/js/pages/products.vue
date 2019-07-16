@@ -10,7 +10,8 @@
         </div>
       </div>
       <div class="rightContainer">
-        <productList :productData="getMyData" />
+       
+        <productList :productData="getFilteredProducts" />
       </div>
   </div>
 </template>
@@ -22,11 +23,16 @@ export default {
   data: () => ({
     productData: [],
   }),
-  methods: {
-
-  },
+  methods: {},
   computed: {
-  
+    getFilteredProducts(){
+      if(this.getFilters.length > 0){
+        return this.$store.getters.productFilter
+      }else{
+        return this.getProductData;
+      }
+      
+    },
     getProductData(){
       return this.$store.getters.getRogueProducts;
     },
