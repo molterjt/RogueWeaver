@@ -7,9 +7,7 @@
         </div>
         <div class="filterOptions">
          <filters filterKey="promotions"   />
-          
         </div>
-        <p>{{getCheckedFilters}}</p>
       </div>
       <div class="rightContainer">
         <productList :productData="getMyData" />
@@ -28,12 +26,9 @@ export default {
 
   },
   computed: {
-   
+  
     getProductData(){
       return this.$store.getters.getRogueProducts;
-    },
-    getBrands(){
-      return this.$store.state.brandFilters
     },
      getCheckedFilters(){
        if(this.$store.state.checkedFilters.length > 0)
@@ -105,9 +100,7 @@ export default {
         height: auto;
         overflow: hidden;
     }
-
   }
-
   .filterOptions{
     justify-content: center;
     margin-left: 10px;

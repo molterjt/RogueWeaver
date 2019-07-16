@@ -5,9 +5,8 @@ const RogueData = require('../assets/products.json')
 export default {
   
   state: {
-    productsData: [...RogueData],
-  
-    checkedFilters: {
+    productsData   : [...RogueData],
+    checkedFilters : {
       brand      : [],
       promotions : [],
     },
@@ -15,29 +14,10 @@ export default {
 
 
   actions: {
-    loadProductData ({commit}){
-      Axios.get('/Users/jeffreymolter/Vue-Projects/front-end-dev-test-2/src/assets/products.json')
-        .then( r => r.data)
-        .then(loadedProducts => {
-          commit('SET_PRODUCTS', loadedProducts)
-        })
-    },
+    
   },
 
   getters: {
-    filterMe: (state) => {
-      let filters = [...state.checkedFilters]
-      let productList = [...state.productsData]
-    
-      filters.map( promo => (
-        productList = productList.filter( product => {
-          product.promotions.includes(promo) 
-        })
-      ))
-      state.productsData = productList
-      
-      return state.productsData
-    },
   
     getProductsByFilter: (state) => (filter) => {
       return state.productsData.filter(item => item.brand === filter)
@@ -46,10 +26,41 @@ export default {
     getRogueProducts: (state) => {
       return state.productsData
     },
+    filterProducts: (state) =>{
+      if(state.checkedFilters.length > 1 ){
+        let filters = [...state.checkedFilters]
+        let data = [...state.productsData]
+        let newData = []
+        filters.map( filter => {
+          newData = data.filter(
+            product => product.brand === filter || product.promotions.includes(filter)
+          )
+        })
+        state.productsData = [...newData]
+        
+        return state.productsData
+
+      } else {
+        return state.productsData
+      }
+
+    },
+    
+
   },
 
 
   mutations: {
+    
+    filterMe: (state, filter) => {
+      let data = state.productsData
+      let newData = []
+      data.filter( product => {
+        newData = product.brand === filter || product.promotions.includes(filter)
+      })
+      
+      return state.productsData = [...newData]
+    },
 
 
     filterProducts: (state) => {
@@ -81,8 +92,16 @@ export default {
 
     updateCheckedFilters: (state, filter) => {
       let filters = [...state.checkedFilters]
-      filters.push(filter)
-      state.checkedFilters = [...filters]
+      if(filters.includes(filter)){
+        const index = filters.indexOf(filter)
+        filters.splice(index,1)
+
+      } else{
+        filters = filters.concat(filter)
+      }
+      
+      return state.checkedFilters = [...filters]
+      
     },
 
 

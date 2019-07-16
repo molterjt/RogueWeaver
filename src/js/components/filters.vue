@@ -5,7 +5,7 @@
       .filter(v-for='(filter,index) in computedFilters')
         .v-input-checkbox
           input(
-            v-model="$store.state.checkedFilters[this.filterKey]"
+            v-model="checkedBoxes"
             :value="filter"
             :id='filter + "-filter"'
             :name='filter + "-filter"'
@@ -19,16 +19,18 @@
 
 <script>
 export default {
-  props: {
-    filterKey: String,
+  props: ['filterKey'],
+  data: () => {
+    return{
+      checkedBoxes: []
+    }
+
   },
-   data: () => ({
-     filterKey: undefined,
-   }),
   methods:{
     updateCheckedFilter(e) {
       this.$store.commit('updateCheckedFilters', e.target.value);
-      this.$store.commit('filtering', e.target.value);
+     
+  
     },
     resetFilter(e){
       this.$store.commit('resetFilterGroup', e.target.value)
