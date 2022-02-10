@@ -36,7 +36,7 @@
     "eslint-plugin-vue": "^3.12.0",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.30.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^7.0.0",
     "prerender-spa-plugin": "^2.1.0",
     "pug": "^2.0.3",
     "pug-lint": "^2.5.0",
